@@ -245,7 +245,7 @@ To install Docker on the EC2 instance, execute the following commands:
 
 	```bash
 	curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-	```bash
+	```
 
 4. Unzip the downloaded file:
 
@@ -263,7 +263,7 @@ To install Docker on the EC2 instance, execute the following commands:
 
 	```bash
 	aws --version
-	```bash
+	```
 
 If the installation was successful, you should see the AWS CLI version listed.
 
@@ -293,14 +293,13 @@ Default output format (e.g., json, text, or table)
 
 To verify that your EC2 instance is properly configured and can receive commands from SSM, run the following command:
 
-	```bash
+	
 	aws ssm send-command \
 	    --region region-name \
 	    --instance-ids ec2-instance-id \
 	    --document-name "AWS-RunShellScript" \
 	    --comment "Testing SSM connection" \
 	    --parameters 'commands=["echo \"Hello from SSM Agent\""]'
-	```
 
 Replace region-name and ec2-instance-id with your actual AWS region and EC2 instance ID.
 
@@ -407,6 +406,7 @@ it to ECR so that we can later deploy containers from it.
 Let's populate the `docker_repo_uri` environment variable with the full URI of the ECR repository
 you created previously. It shall be similar to the following:
 
+   ```bash
    pipeline {
     	...
 
@@ -418,6 +418,7 @@ you created previously. It shall be similar to the following:
 
         ...
     }
+    ```
 
 Now add the Build and the Pre-Build stages
 
