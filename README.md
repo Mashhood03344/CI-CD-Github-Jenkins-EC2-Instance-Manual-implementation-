@@ -406,7 +406,7 @@ it to ECR so that we can later deploy containers from it.
 Let's populate the `docker_repo_uri` environment variable with the full URI of the ECR repository
 you created previously. It shall be similar to the following:
 
-   ```bash
+
    pipeline {
     	...
 
@@ -418,7 +418,7 @@ you created previously. It shall be similar to the following:
 
         ...
     }
-    ```
+
 
 Now add the Build and the Pre-Build stages
 
